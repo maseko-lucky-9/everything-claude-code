@@ -1,0 +1,39 @@
+# Normalize line endings: store LF in the repo, check out LF everywhere.
+# Prevents whole-repo CRLF churn (the root cause of the 2026-06-15 stash-pop conflict).
+
+* text=auto eol=lf
+
+# Explicit text types
+*.js   text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf
+*.py   text eol=lf
+*.rs   text eol=lf
+*.go   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ps1  text eol=lf
+
+# Lockfiles: text but never reformat
+*.lock            -text
+package-lock.json -text
+yarn.lock         -text
+
+# Binary assets (do NOT add *.svg — the svg files are XML text)
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+*.pdf   binary
+*.mp4   binary
+*.mov   binary
+*.mp3   binary
+*.wav   binary
